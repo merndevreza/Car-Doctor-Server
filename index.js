@@ -7,7 +7,7 @@ require("dotenv").config();
 const { MongoClient, ServerApiVersion } = require('mongodb');
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 
 //======================
 //Middleware
@@ -40,7 +40,7 @@ async function run() {
 
 
 
-    
+
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
@@ -55,7 +55,7 @@ run().catch(console.dir);
 //Express 
 //======================
 app.get('/',(req,res)=>{
-   res.send("Car server is running")
+   res.send("Car Doctor server is running")
 })
 app.listen(port,()=>{
    console.log(`Car Doctor Server is running on port:${port} `);
